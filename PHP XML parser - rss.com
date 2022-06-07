@@ -6,12 +6,13 @@ $xml = simplexml_load_file($url);
 $html = "";
 
 for($i = 0; $i < $xml->count(); $i++){
-	
-	 $ns_itunes = $xml->channel->item[$i]->children('http://www.itunes.com/dtds/podcast-1.0.dtd');
-	 $itunesimage= $ns_itunes->image->attributes();
-	 $itunesduration= $ns_itunes->duration;
 
+	//image for each podcast episode
+	$ns_itunes = $xml->channel->item[$i]->children('http://www.itunes.com/dtds/podcast-1.0.dtd');
+	$itunesimage= $ns_itunes->image->attributes();
+	$itunesduration= $ns_itunes->duration;
   
+ 
 	$title = $xml->channel->item[$i]->title;
 	$link = $xml->channel->item[$i]->link;
 	$description = $xml->channel->item[$i]->description;
@@ -27,4 +28,6 @@ for($i = 0; $i < $xml->count(); $i++){
 	$html .= $itunesduration;
 	$html .= $duration;
 	
-echo "$html<br />";
+}
+	
+	echo "$html<br />";
