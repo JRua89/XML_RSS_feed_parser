@@ -1,4 +1,4 @@
-
+<?PHP
 $url = "YOUR_XML_FILE_HERE";
 
 $xml = simplexml_load_file($url);
@@ -31,3 +31,4 @@ for($i = 0; $i < $xml->count(); $i++){
 }
 	
 	echo "$html<br />";
+ ?>
