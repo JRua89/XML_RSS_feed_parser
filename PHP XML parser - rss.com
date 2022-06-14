@@ -5,7 +5,7 @@ $xml = simplexml_load_file($url);
 
 $html = "";
 
-for($i = 0; $i < $xml->count(); $i++){
+for($i = 0; $i < count($xml->channel->item); $i++){
 
 	//image for each podcast episode
 	$ns_itunes = $xml->channel->item[$i]->children('http://www.itunes.com/dtds/podcast-1.0.dtd');
